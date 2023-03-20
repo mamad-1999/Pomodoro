@@ -1,25 +1,29 @@
 import useTimeStore from "@/store/timeStore";
 
-const useChangeType = () => {
-  const { pomodoroType, setBreak, setFocus, pause, setTime, status, play } =
-    useTimeStore((state) => ({
+const useChangeType = (isPlay: "Yes" | "NO") => {
+  const { pomodoroType, setBreak, setFocus, setTime, play } = useTimeStore(
+    (state) => ({
       pomodoroType: state.pomodoroType,
       setFocus: state.setFocusSession,
       setBreak: state.setShortBreak,
-      pause: state.pauseAction,
       setTime: state.setPomodoroTime,
       status: state.playStatus,
       play: state.playAction,
-    }));
+    })
+  );
 
-  const changeType = () => {
-    pomodoroType === "focus" ? setBreak() : setFocus();
-    pomodoroType === "focus" ? setTime(2000) : setTime(3000);
+  const focusTime = 2000;
+  const breakTime = 3000;
 
-    play();
+  const changeTypeAndPlay = () => {
+    pomodoroType === "focus"
+      ? (setBreak(), setTime(breakTime))
+      : (setFocus(), setTime(focusTime));
+
+    isPlay === "Yes" && play();
   };
 
-  return { changeType };
+  return { changeTypeAndPlay };
 };
 
 export default useChangeType;

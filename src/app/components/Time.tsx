@@ -7,7 +7,7 @@ import useTimeStore from "../../store/timeStore"
 import useChangeType from "../../../hooks/useChangeType"
 
 const Time = () => {
-    const { changeType } = useChangeType()
+    const { changeTypeAndPlay } = useChangeType("Yes")
     const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, setTime } = useTimeStore((state) => ({
         status: state.playStatus,
         play: state.playAction,
@@ -20,11 +20,10 @@ const Time = () => {
 
     useEffect(() => {
         if (focusTime < 0) {
-            // clearTime()
             pause()
-            changeType()
+            changeTypeAndPlay()
         }
-    }, [focusTime])
+    }, [changeTypeAndPlay, focusTime, pause])
 
     const handlePomodoroTime = () => {
         status ? handlePause() : handlePlay()

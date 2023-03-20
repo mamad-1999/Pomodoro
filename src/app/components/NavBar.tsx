@@ -2,8 +2,10 @@
 
 import useTimeStore from "@/store/timeStore"
 import { clearTime } from "../../../utils/clearTime"
+import useChangeType from "../../../hooks/useChangeType"
 
 const NavBar = () => {
+    const { changeTypeAndPlay } = useChangeType("NO")
     const { pomodoroType, setBreak, setFocus, pause, setTime, status } = useTimeStore((state) => ({
         pomodoroType: state.pomodoroType,
         setFocus: state.setFocusSession,
@@ -19,8 +21,8 @@ const NavBar = () => {
 
         const isFocus = pomodoroType === "focus";
         const isBreak = pomodoroType === "break";
-        const focusTime = 1_500_000;
-        const breakTime = 300_000;
+        const focusTime = 2000;
+        const breakTime = 3000;
 
         if (status && isFocus) {
             setTime(focusTime);
@@ -30,13 +32,7 @@ const NavBar = () => {
             return;
         }
 
-        if (isFocus) {
-            setBreak();
-            setTime(breakTime);
-        } else {
-            setFocus();
-            setTime(focusTime);
-        }
+        changeTypeAndPlay()
     }
     return (
         <nav className="flex w-full h-16 justify-between p-4 select-none">
