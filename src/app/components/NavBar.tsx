@@ -1,16 +1,27 @@
 "use client"
 
 import useTimeStore from "@/store/timeStore"
+import { clearTime } from "../../../utils/clearTime"
 
 const NavBar = () => {
-    const { pomodoroType, setBreak, setFocus } = useTimeStore((state) => ({
+    const { pomodoroType, setBreak, setFocus, pause, setTime } = useTimeStore((state) => ({
         pomodoroType: state.pomodoroType,
         setFocus: state.setFocusSession,
-        setBreak: state.setShortBreak
+        setBreak: state.setShortBreak,
+        pause: state.pauseAction,
+        setTime: state.setPomodoroTime
     }))
 
     const handleChangeType = () => {
-        pomodoroType === "focus" ? setBreak() : setFocus()
+        clearTime()
+        pause()
+        if (pomodoroType === "focus") {
+            setBreak()
+            setTime(300_000)
+        } else {
+            setFocus()
+            setTime(1_500_000)
+        }
     }
     return (
         <nav className="flex w-full h-16 justify-between p-4 select-none">

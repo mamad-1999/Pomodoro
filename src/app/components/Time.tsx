@@ -5,13 +5,14 @@ import { formatTime } from "../../../utils/formatTime"
 import useTimeStore from "../../store/timeStore"
 
 const Time = () => {
-    const { pause, play, status, decreaseTime, pomodoroTime, pomodoroType } = useTimeStore((state) => ({
+    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, setTime } = useTimeStore((state) => ({
         status: state.playStatus,
         play: state.playAction,
         pause: state.pauseAction,
-        pomodoroTime: state.focusTime,
-        decreaseTime: state.decreaseTime,
-        pomodoroType: state.pomodoroType
+        focusTime: state.focusTime,
+        decreaseFocusTime: state.decreaseFocusTime,
+        pomodoroType: state.pomodoroType,
+        setTime: state.setPomodoroTime
     }))
 
     const handlePomodoroTime = () => {
@@ -21,7 +22,7 @@ const Time = () => {
     const handlePlay = () => {
         play()
         const time = setInterval(() => {
-            decreaseTime(1000)
+            decreaseFocusTime(1000)
         }, 1000)
         localStorage.setItem("interval", JSON.stringify(time))
     }
@@ -33,7 +34,7 @@ const Time = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-4">
-            <h3 className="md:text-9xl text-8xl text-white font-thin select-none">{formatTime(pomodoroTime)}</h3>
+            <h3 className="md:text-9xl text-8xl text-white font-thin select-none">{formatTime(focusTime)}</h3>
             <button onClick={handlePomodoroTime} className={`${pomodoroType === "focus" ? "bg-red-400" : "bg-indigo-300"} w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl`}>
                 {
                     status ? (

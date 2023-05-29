@@ -8,21 +8,23 @@ type timeStateType = {
   setShortBreak: () => void;
   setFocusSession: () => void;
   focusTime: number;
-  decreaseTime: (time: number) => void;
+  decreaseFocusTime: (time: number) => void;
   pomodoroType: "focus" | "break";
+  setPomodoroTime: (time: number) => void;
 };
 
 const useTimeStore = create<timeStateType>()(
   devtools((set) => ({
     playStatus: false,
-    focusTime: 300000,
+    focusTime: 1_500_000,
     pomodoroType: "focus",
     playAction: () => set(() => ({ playStatus: true })),
     pauseAction: () => set(() => ({ playStatus: false })),
     setFocusSession: () => set(() => ({ pomodoroType: "focus" })),
     setShortBreak: () => set(() => ({ pomodoroType: "break" })),
-    decreaseTime: (time: number) =>
+    decreaseFocusTime: (time: number) =>
       set((state) => ({ focusTime: state.focusTime - time })),
+    setPomodoroTime: (time: number) => set((state) => ({ focusTime: time })),
   }))
 );
 
