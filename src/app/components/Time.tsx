@@ -1,5 +1,5 @@
 "use client"
-import useTimeStore from "../store/timeStore"
+import useTimeStore from "../../store/timeStore"
 
 const Time = () => {
     const { pause, play, status } = useTimeStore((state) => ({
