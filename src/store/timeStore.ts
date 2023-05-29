@@ -16,7 +16,7 @@ type timeStateType = {
 const useTimeStore = create<timeStateType>()(
   devtools((set) => ({
     playStatus: false,
-    focusTime: 1_500_000,
+    focusTime: 1500,
     pomodoroType: "focus",
     playAction: () => set(() => ({ playStatus: true })),
     pauseAction: () => set(() => ({ playStatus: false })),

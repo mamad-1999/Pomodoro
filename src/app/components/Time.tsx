@@ -1,10 +1,13 @@
 "use client"
 
+import { useEffect } from "react"
 import { clearTime } from "../../../utils/clearTime"
 import { formatTime } from "../../../utils/formatTime"
 import useTimeStore from "../../store/timeStore"
+import useChangeType from "../../../hooks/useChangeType"
 
 const Time = () => {
+    const { changeType } = useChangeType()
     const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, setTime } = useTimeStore((state) => ({
         status: state.playStatus,
         play: state.playAction,
@@ -14,6 +17,14 @@ const Time = () => {
         pomodoroType: state.pomodoroType,
         setTime: state.setPomodoroTime
     }))
+
+    useEffect(() => {
+        if (focusTime < 0) {
+            // clearTime()
+            pause()
+            changeType()
+        }
+    }, [focusTime])
 
     const handlePomodoroTime = () => {
         status ? handlePause() : handlePlay()
@@ -34,7 +45,7 @@ const Time = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-4">
-            <h3 className="md:text-9xl text-8xl text-white font-thin select-none">{formatTime(focusTime)}</h3>
+            <h3 className="md:text-9xl text-8xl text-white font-thin select-none">{formatTime(focusTime).substring(-1, 5)}</h3>
             <button onClick={handlePomodoroTime} className={`${pomodoroType === "focus" ? "bg-red-400" : "bg-indigo-300"} w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl`}>
                 {
                     status ? (
