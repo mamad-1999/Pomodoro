@@ -10,19 +10,14 @@ type timeStateType = {
 };
 
 const useTimeStore = create<timeStateType>()(
-  devtools(
-    persist(
-      (set) => ({
-        playStatus: false,
-        focusTime: 300000,
-        playAction: () => set(() => ({ playStatus: true })),
-        pauseAction: () => set(() => ({ playStatus: false })),
-        decreaseTime: (time: number) =>
-          set((state) => ({ focusTime: state.focusTime - time })),
-      }),
-      { name: "pomodoro" }
-    )
-  )
+  devtools((set) => ({
+    playStatus: false,
+    focusTime: 300000,
+    playAction: () => set(() => ({ playStatus: true })),
+    pauseAction: () => set(() => ({ playStatus: false })),
+    decreaseTime: (time: number) =>
+      set((state) => ({ focusTime: state.focusTime - time })),
+  }))
 );
 
 export default useTimeStore;
