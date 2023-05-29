@@ -4,23 +4,38 @@ import useTimeStore from "@/store/timeStore"
 import { clearTime } from "../../../utils/clearTime"
 
 const NavBar = () => {
-    const { pomodoroType, setBreak, setFocus, pause, setTime } = useTimeStore((state) => ({
+    const { pomodoroType, setBreak, setFocus, pause, setTime, status } = useTimeStore((state) => ({
         pomodoroType: state.pomodoroType,
         setFocus: state.setFocusSession,
         setBreak: state.setShortBreak,
         pause: state.pauseAction,
-        setTime: state.setPomodoroTime
+        setTime: state.setPomodoroTime,
+        status: state.playStatus
     }))
 
     const handleChangeType = () => {
         clearTime()
         pause()
-        if (pomodoroType === "focus") {
-            setBreak()
-            setTime(300_000)
+
+        const isFocus = pomodoroType === "focus";
+        const isBreak = pomodoroType === "break";
+        const focusTime = 1_500_000;
+        const breakTime = 300_000;
+
+        if (status && isFocus) {
+            setTime(focusTime);
+            return;
+        } else if (status && isBreak) {
+            setTime(breakTime);
+            return;
+        }
+
+        if (isFocus) {
+            setBreak();
+            setTime(breakTime);
         } else {
-            setFocus()
-            setTime(1_500_000)
+            setFocus();
+            setTime(focusTime);
         }
     }
     return (
@@ -31,7 +46,7 @@ const NavBar = () => {
                 </svg>
                 <h3 className="text-white text-lg">Focus</h3>
             </div>
-            <button onClick={handleChangeType} className="text-white">Skip</button>
+            <button onClick={handleChangeType} className="text-white text-lg">{status ? "Stop" : "Skip"}</button>
         </nav>
     )
 }
