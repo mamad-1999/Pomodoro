@@ -1,5 +1,17 @@
+"use client"
+
+import useTimeStore from "@/store/timeStore"
 
 const NavBar = () => {
+    const { pomodoroType, setBreak, setFocus } = useTimeStore((state) => ({
+        pomodoroType: state.pomodoroType,
+        setFocus: state.setFocusSession,
+        setBreak: state.setShortBreak
+    }))
+
+    const handleChangeType = () => {
+        pomodoroType === "focus" ? setBreak() : setFocus()
+    }
     return (
         <nav className="flex w-full h-16 justify-between p-4 select-none">
             <div className="flex gap-2 items-center justify-center">
@@ -8,7 +20,7 @@ const NavBar = () => {
                 </svg>
                 <h3 className="text-white text-lg">Focus</h3>
             </div>
-            <h3 className="text-white">Skip</h3>
+            <button onClick={handleChangeType} className="text-white">Skip</button>
         </nav>
     )
 }
