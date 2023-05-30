@@ -10,10 +10,12 @@ import { Howl } from "howler"
 const Time = () => {
     const { changeTypeAndPlay } = useChangeType("Yes")
     const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, roundEnd, roundStart, setRound, goalEnd, goalStart, setGoal } = useZustandState()
+    // custom hook for get all need state from zustand store  
 
     const sound = new Howl({
         src: ["/second.mp3"],
     });
+    // second sound 
 
 
     useEffect(() => {
@@ -30,14 +32,15 @@ const Time = () => {
         play()
         const time = setInterval(() => {
             decreaseFocusTime(1000)
-            sound.play()
+            sound.play() // play sound every second (tik tak)
         }, 1000)
         localStorage.setItem("interval", JSON.stringify(time))
+        // save interval Id in localStorage for clearing in second section
     }
 
     const handlePause = () => {
         pause()
-        clearTime()
+        clearTime() // util function for clear interval from memory
     }
 
     const handleFocusTime = () => {
@@ -45,6 +48,7 @@ const Time = () => {
             pause()
             changeTypeAndPlay()
         }
+        // check end timer to handle Goal and Round and change session (Break & Focus)
     }
 
     const handleRoundAndGoal = () => {
@@ -54,6 +58,7 @@ const Time = () => {
         if (goalStart >= goalEnd) {
             setGoal(0)
         }
+        // reset start Goal and Round number when equal to End Goal and Round
     }
 
     return (

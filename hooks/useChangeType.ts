@@ -28,9 +28,12 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
       setFocus();
       setTime(focusTime);
     }
+    // check Focus or Break time for change session
 
-    sound.play();
+    sound.play(); // alarm sound play after end break and focus time
     isPlay === "Yes" && play();
+    // this code check the change session is skip button or end time
+    // if end time play again timer else just change the session only
   };
 
   const handleGoalAndRound = () => {
@@ -38,6 +41,7 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
 
     increaseRound();
     increaseGoal();
+    // changing Goal and Round after end focus time (not break time)
   };
 
   return { changeTypeAndPlay };
