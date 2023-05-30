@@ -1,17 +1,37 @@
 import useZustandState from "./useZustandState";
 
 const useChangeType = (isPlay: "Yes" | "NO") => {
-  const { pomodoroType, setBreak, setFocus, setTime, play } = useZustandState();
+  const {
+    pomodoroType,
+    setBreak,
+    setFocus,
+    setTime,
+    play,
+    increaseRound,
+    increaseGoal,
+  } = useZustandState();
 
   const focusTime = 2000;
   const breakTime = 3000;
 
   const changeTypeAndPlay = () => {
-    pomodoroType === "focus"
-      ? (setBreak(), setTime(breakTime))
-      : (setFocus(), setTime(focusTime));
+    if (pomodoroType === "focus") {
+      setBreak();
+      setTime(breakTime);
+      handleGoalAndRound();
+    } else {
+      setFocus();
+      setTime(focusTime);
+    }
 
     isPlay === "Yes" && play();
+  };
+
+  const handleGoalAndRound = () => {
+    if (isPlay === "NO") return;
+
+    increaseRound();
+    increaseGoal();
   };
 
   return { changeTypeAndPlay };

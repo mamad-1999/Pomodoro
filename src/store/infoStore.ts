@@ -16,4 +16,14 @@ export const infoStore: StateCreator<infoStateType> = (set: any) => ({
       ...state,
       roundStart: state.roundStart + 1,
     })),
+  setGoal: (num: number) =>
+    set((state: any) => ({
+      ...state,
+      goalStart: num,
+    })),
+  setRound: (num: number) =>
+    set((state: any) => ({
+      ...state,
+      roundStart: num,
+    })),
 });

@@ -8,14 +8,13 @@ import useZustandState from "../../../hooks/useZustandState"
 
 const Time = () => {
     const { changeTypeAndPlay } = useChangeType("Yes")
-    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType } = useZustandState()
+    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, roundEnd, roundStart, setRound, goalEnd, goalStart, setGoal } = useZustandState()
 
     useEffect(() => {
-        if (focusTime < 0) {
-            pause()
-            changeTypeAndPlay()
-        }
-    }, [changeTypeAndPlay, focusTime, pause])
+        handleFocusTime()
+        handleRoundAndGoal()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [changeTypeAndPlay, focusTime, goalEnd, goalStart, pause, roundEnd, roundStart, setGoal, setRound])
 
     const handlePomodoroTime = () => {
         status ? handlePause() : handlePlay()
@@ -32,6 +31,22 @@ const Time = () => {
     const handlePause = () => {
         pause()
         clearTime()
+    }
+
+    const handleFocusTime = () => {
+        if (focusTime < 0) {
+            pause()
+            changeTypeAndPlay()
+        }
+    }
+
+    const handleRoundAndGoal = () => {
+        if (roundStart >= roundEnd) {
+            setRound(0);
+        }
+        if (goalStart >= goalEnd) {
+            setGoal(0)
+        }
     }
 
     return (

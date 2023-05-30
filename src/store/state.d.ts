@@ -17,4 +17,6 @@ export type infoStateType = {
   roundStart: 0;
   increaseGoal: () => void;
   increaseRound: () => void;
+  setRound: (num: number) => void;
+  setGoal: (num: number) => void;
 };

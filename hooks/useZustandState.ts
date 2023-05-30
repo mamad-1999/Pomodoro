@@ -11,6 +11,14 @@ const useZustandState = () => {
     decreaseFocusTime,
     focusTime,
     pause,
+    increaseGoal,
+    increaseRound,
+    roundEnd,
+    roundStart,
+    goalEnd,
+    goalStart,
+    setGoal,
+    setRound,
   } = useTimeStore((state) => ({
     pomodoroType: state.pomodoroType,
     setFocus: state.setFocusSession,
@@ -21,6 +29,14 @@ const useZustandState = () => {
     pause: state.pauseAction,
     focusTime: state.focusTime,
     decreaseFocusTime: state.decreaseFocusTime,
+    roundStart: state.roundStart,
+    roundEnd: state.roundEnd,
+    goalStart: state.goalStart,
+    goalEnd: state.goalEnd,
+    increaseRound: state.increaseRound,
+    increaseGoal: state.increaseGoal,
+    setRound: state.setRound,
+    setGoal: state.setGoal,
   }));
 
   return {
@@ -33,6 +49,14 @@ const useZustandState = () => {
     decreaseFocusTime,
     focusTime,
     pause,
+    increaseGoal,
+    increaseRound,
+    roundEnd,
+    roundStart,
+    goalEnd,
+    goalStart,
+    setRound,
+    setGoal,
   };
 };
 
