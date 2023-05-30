@@ -1,31 +1,21 @@
-import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
+import { StateCreator } from "zustand";
+import { timeStateType } from "./state";
 
-type timeStateType = {
-  playStatus: boolean;
-  playAction: () => void;
-  pauseAction: () => void;
-  setShortBreak: () => void;
-  setFocusSession: () => void;
-  focusTime: number;
-  decreaseFocusTime: (time: number) => void;
-  pomodoroType: "focus" | "break";
-  setPomodoroTime: (time: number) => void;
-};
-
-const useTimeStore = create<timeStateType>()(
-  devtools((set) => ({
-    playStatus: false,
-    focusTime: 2000,
-    pomodoroType: "focus",
-    playAction: () => set(() => ({ playStatus: true })),
-    pauseAction: () => set(() => ({ playStatus: false })),
-    setFocusSession: () => set(() => ({ pomodoroType: "focus" })),
-    setShortBreak: () => set(() => ({ pomodoroType: "break" })),
-    decreaseFocusTime: (time: number) =>
-      set((state) => ({ focusTime: state.focusTime - time })),
-    setPomodoroTime: (time: number) => set((state) => ({ focusTime: time })),
-  }))
-);
-
-export default useTimeStore;
+export const timeStore: StateCreator<timeStateType> = (set: any) => ({
+  playStatus: false,
+  focusTime: 2000,
+  pomodoroType: "focus",
+  playAction: () => set((state: any) => ({ ...state, playStatus: true })),
+  pauseAction: () => set((state: any) => ({ ...state, playStatus: false })),
+  setFocusSession: () =>
+    set((state: any) => ({ ...state, pomodoroType: "focus" })),
+  setShortBreak: () =>
+    set((state: any) => ({ ...state, pomodoroType: "break" })),
+  decreaseFocusTime: (time: number) =>
+    set((state: { focusTime: number }) => ({
+      ...state,
+      focusTime: state.focusTime - time,
+    })),
+  setPomodoroTime: (time: number) =>
+    set((state: any) => ({ ...state, focusTime: time })),
+});

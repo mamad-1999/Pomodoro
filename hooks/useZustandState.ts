@@ -1,4 +1,4 @@
-import useTimeStore from "@/store/timeStore";
+import useTimeStore from "@/store/store";
 
 const useZustandState = () => {
   const {
