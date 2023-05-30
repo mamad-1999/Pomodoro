@@ -1,4 +1,9 @@
 import useZustandState from "./useZustandState";
+import { Howl } from "howler";
+
+const sound = new Howl({
+  src: ["/alarm.mp3"],
+});
 
 const useChangeType = (isPlay: "Yes" | "NO") => {
   const {
@@ -11,8 +16,8 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     increaseGoal,
   } = useZustandState();
 
-  const focusTime = 2000;
-  const breakTime = 3000;
+  const focusTime = 7000;
+  const breakTime = 7000;
 
   const changeTypeAndPlay = () => {
     if (pomodoroType === "focus") {
@@ -24,6 +29,7 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
       setTime(focusTime);
     }
 
+    sound.play();
     isPlay === "Yes" && play();
   };
 

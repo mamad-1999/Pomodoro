@@ -5,10 +5,16 @@ import { clearTime } from "../../../utils/clearTime"
 import { formatTime } from "../../../utils/formatTime"
 import useChangeType from "../../../hooks/useChangeType"
 import useZustandState from "../../../hooks/useZustandState"
+import { Howl } from "howler"
 
 const Time = () => {
     const { changeTypeAndPlay } = useChangeType("Yes")
     const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, roundEnd, roundStart, setRound, goalEnd, goalStart, setGoal } = useZustandState()
+
+    const sound = new Howl({
+        src: ["/second.mp3"],
+    });
+
 
     useEffect(() => {
         handleFocusTime()
@@ -24,6 +30,7 @@ const Time = () => {
         play()
         const time = setInterval(() => {
             decreaseFocusTime(1000)
+            sound.play()
         }, 1000)
         localStorage.setItem("interval", JSON.stringify(time))
     }
