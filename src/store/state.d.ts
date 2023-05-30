@@ -9,3 +9,12 @@ export type timeStateType = {
   pomodoroType: "focus" | "break";
   setPomodoroTime: (time: number) => void;
 };
+
+export type infoStateType = {
+  goalEnd: 12;
+  goalStart: 0;
+  roundEnd: 4;
+  roundStart: 0;
+  increaseGoal: () => void;
+  increaseRound: () => void;
+};
