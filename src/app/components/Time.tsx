@@ -3,20 +3,12 @@
 import { useEffect } from "react"
 import { clearTime } from "../../../utils/clearTime"
 import { formatTime } from "../../../utils/formatTime"
-import useTimeStore from "../../store/timeStore"
 import useChangeType from "../../../hooks/useChangeType"
+import useZustandState from "../../../hooks/useZustandState"
 
 const Time = () => {
     const { changeTypeAndPlay } = useChangeType("Yes")
-    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, setTime } = useTimeStore((state) => ({
-        status: state.playStatus,
-        play: state.playAction,
-        pause: state.pauseAction,
-        focusTime: state.focusTime,
-        decreaseFocusTime: state.decreaseFocusTime,
-        pomodoroType: state.pomodoroType,
-        setTime: state.setPomodoroTime
-    }))
+    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType } = useZustandState()
 
     useEffect(() => {
         if (focusTime < 0) {

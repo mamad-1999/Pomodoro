@@ -1,16 +1,7 @@
-import useTimeStore from "@/store/timeStore";
+import useZustandState from "./useZustandState";
 
 const useChangeType = (isPlay: "Yes" | "NO") => {
-  const { pomodoroType, setBreak, setFocus, setTime, play } = useTimeStore(
-    (state) => ({
-      pomodoroType: state.pomodoroType,
-      setFocus: state.setFocusSession,
-      setBreak: state.setShortBreak,
-      setTime: state.setPomodoroTime,
-      status: state.playStatus,
-      play: state.playAction,
-    })
-  );
+  const { pomodoroType, setBreak, setFocus, setTime, play } = useZustandState();
 
   const focusTime = 2000;
   const breakTime = 3000;

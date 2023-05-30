@@ -1,19 +1,12 @@
 "use client"
 
-import useTimeStore from "@/store/timeStore"
 import { clearTime } from "../../../utils/clearTime"
 import useChangeType from "../../../hooks/useChangeType"
+import useZustandState from "../../../hooks/useZustandState"
 
 const NavBar = () => {
     const { changeTypeAndPlay } = useChangeType("NO")
-    const { pomodoroType, setBreak, setFocus, pause, setTime, status } = useTimeStore((state) => ({
-        pomodoroType: state.pomodoroType,
-        setFocus: state.setFocusSession,
-        setBreak: state.setShortBreak,
-        pause: state.pauseAction,
-        setTime: state.setPomodoroTime,
-        status: state.playStatus
-    }))
+    const { pomodoroType, pause, setTime, status } = useZustandState()
 
     const handleChangeType = () => {
         clearTime()
