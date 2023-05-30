@@ -10,12 +10,13 @@ const NavBar = () => {
 
     const handleChangeType = () => {
         clearTime()
+        // after skip clear the interval
         pause()
 
         const isFocus = pomodoroType === "focus";
         const isBreak = pomodoroType === "break";
-        const focusTime = 2000;
-        const breakTime = 3000;
+        const focusTime = 7000;
+        const breakTime = 7000;
 
         if (status && isFocus) {
             setTime(focusTime);
@@ -24,6 +25,8 @@ const NavBar = () => {
             setTime(breakTime);
             return;
         }
+        // if timer is play skip button just reset the current session and not changing
+        // else change the session and play with function below 
 
         changeTypeAndPlay()
     }
