@@ -9,7 +9,7 @@ import { Howl } from "howler"
 
 const Time = () => {
     const { changeTypeAndPlay } = useChangeType("Yes")
-    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, roundEnd, roundStart, setRound, goalEnd, goalStart, setGoal } = useZustandState()
+    const { pause, play, status, decreaseFocusTime, focusTime, pomodoroType, roundEnd, roundStart, setRound, goalEnd, goalStart, setGoal, isTikTokOn } = useZustandState()
     // custom hook for get all need state from zustand store  
 
     const sound = new Howl({
@@ -32,7 +32,7 @@ const Time = () => {
         play()
         const time = setInterval(() => {
             decreaseFocusTime(1000)
-            sound.play() // play sound every second (tik tak)
+            isTikTokOn && sound.play() // play sound every second (tik tak)
         }, 1000)
         localStorage.setItem("interval", JSON.stringify(time))
         // save interval Id in localStorage for clearing in second section
