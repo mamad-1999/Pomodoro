@@ -19,6 +19,13 @@ const useZustandState = () => {
     goalStart,
     setGoal,
     setRound,
+    alarmControl,
+    closeModal,
+    isAlarmOn,
+    isShowModal,
+    isTikTokOn,
+    showModal,
+    tikTokControl,
   } = useTimeStore((state) => ({
     pomodoroType: state.pomodoroType,
     setFocus: state.setFocusSession,
@@ -37,6 +44,13 @@ const useZustandState = () => {
     increaseGoal: state.increaseGoal,
     setRound: state.setRound,
     setGoal: state.setGoal,
+    isAlarmOn: state.isAlarmOn,
+    isTikTokOn: state.isTikTokOn,
+    alarmControl: state.alarmControl,
+    tikTokControl: state.tikTokControl,
+    isShowModal: state.isShowModal,
+    showModal: state.showModal,
+    closeModal: state.closeModal,
   }));
 
   return {
@@ -57,6 +71,13 @@ const useZustandState = () => {
     goalStart,
     setRound,
     setGoal,
+    alarmControl,
+    closeModal,
+    isAlarmOn,
+    isShowModal,
+    isTikTokOn,
+    showModal,
+    tikTokControl,
   };
 };
 
