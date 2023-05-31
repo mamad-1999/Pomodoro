@@ -20,3 +20,10 @@ export type infoStateType = {
   setRound: (num: number) => void;
   setGoal: (num: number) => void;
 };
+
+export type soundStateType = {
+  isAlarmOn: boolean;
+  isTikTokOn: boolean;
+  alarmControl: () => void;
+  tikTokControl: () => void;
+};
