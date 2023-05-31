@@ -3,6 +3,7 @@
 import Footer from "./components/Footer";
 import NavBar from "./components/NavBar";
 import Time from "./components/Time";
+import SoundModal from "./components/SoundModal"
 import useZustandState from "../../hooks/useZustandState";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className={`w-full min-h-screen ${pomodoroType === "focus" ? "bg-red-600" : "bg-indigo-400"}`}>
       <NavBar />
+      <SoundModal />
       <Time />
       <Footer />
     </main>

@@ -1,11 +1,17 @@
 
 type InfoButtonPropType = {
     title: string,
-    bgColor: string
+    bgColor: string,
+    click: () => void
 }
-const InfoButton = ({ bgColor, title }: InfoButtonPropType) => {
+const InfoButton = ({ bgColor, title, click }: InfoButtonPropType) => {
+
     return (
-        <button className={`${bgColor} rounded h-full font-medium`}>{title}</button>
+        <button
+            onClick={() => click()}
+            className={`${bgColor} rounded h-full font-medium`}
+        >{title}
+        </button>
     )
 }
 
