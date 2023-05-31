@@ -27,3 +27,9 @@ export type soundStateType = {
   alarmControl: () => void;
   tikTokControl: () => void;
 };
+
+export type modalStateType = {
+  isShowModal: boolean;
+  showModal: () => void;
+  closeModal: () => void;
+};
