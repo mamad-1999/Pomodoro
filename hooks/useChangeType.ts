@@ -30,8 +30,10 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     }
     // check Focus or Break time for change session
 
-    sound.play(); // alarm sound play after end break and focus time
-    isPlay === "Yes" && play();
+    if (isPlay === "Yes") {
+      sound.play(); // alarm sound play after end break and focus time
+      play(); // play timer
+    }
     // this code check the change session is skip button or end time
     // if end time play again timer else just change the session only
   };
