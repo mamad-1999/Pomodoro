@@ -2,14 +2,18 @@
 
 import useZustandState from "../../../hooks/useZustandState"
 import InfoBox from "./InfoBox"
+import InfoButton from "./InfoButton"
 
 
 const Footer = () => {
     const { goalEnd, goalStart, roundEnd, roundStart } = useZustandState()
     return (
-        <div className="w-full bg-white fixed bottom-0 right-0 left-0 p-4 flex items-center justify-between gap-4 md:hidden shadow-black shadow-2xl select-none">
+        <div className="w-full md:max-w-2xl mx-auto bg-white fixed bottom-0 right-0 left-0 p-4 md:p-2 rounded-t-xl flex items-center justify-between gap-4 shadow-black shadow-2xl select-none">
             <InfoBox title={"Round"} start={roundStart} end={roundEnd} />
-            <span className="w-[2.5px] bg-gray-400 h-24"></span>
+            <div className="w-56 h-28 flex flex-col gap-1">
+                <InfoButton title={"MUTE"} bgColor="bg-gray-300" />
+                <InfoButton title={"COUNT"} bgColor="bg-stone-300" />
+            </div>
             <InfoBox title={"Goal"} start={goalStart} end={goalEnd} />
         </div>
     )
