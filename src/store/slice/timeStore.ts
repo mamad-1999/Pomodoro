@@ -1,5 +1,5 @@
 import { StateCreator } from "zustand";
-import { timeStateType } from "./state";
+import { timeStateType } from "../state";
 
 export const timeStore: StateCreator<timeStateType> = (set: any) => ({
   playStatus: false,

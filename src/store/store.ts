@@ -1,19 +1,12 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { timeStore } from "./timeStore";
-import {
-  infoStateType,
-  modalStateType,
-  soundStateType,
-  timeStateType,
-} from "./state";
-import { infoStore } from "./infoStore";
-import { soundStore } from "./soundStore";
-import { modalStore } from "./modalStore";
+import { timeStore } from "./slice/timeStore";
+import { infoStore } from "./slice/infoStore";
+import { soundStore } from "./slice/soundStore";
+import { modalStore } from "./slice/modalStore";
+import { allStateType } from "./state";
 
-const useTimeStore = create<
-  timeStateType & infoStateType & soundStateType & modalStateType
->()(
+const useTimeStore = create<allStateType>()(
   devtools((...a) => ({
     ...timeStore(...a),
     ...infoStore(...a),

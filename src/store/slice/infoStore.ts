@@ -1,5 +1,5 @@
 import { StateCreator } from "zustand";
-import { infoStateType } from "./state";
+import { infoStateType } from "../state";
 
 export const infoStore: StateCreator<infoStateType> = (set: any) => ({
   goalEnd: 12,

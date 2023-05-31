@@ -33,3 +33,8 @@ export type modalStateType = {
   showModal: () => void;
   closeModal: () => void;
 };
+
+export type allStateType = timeStateType &
+  infoStateType &
+  soundStateType &
+  modalStateType;
