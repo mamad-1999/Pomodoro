@@ -15,10 +15,13 @@ export type infoStateType = {
   goalStart: 0;
   roundEnd: 4;
   roundStart: 0;
+  isInfoPanelShow: boolean;
   increaseGoal: () => void;
   increaseRound: () => void;
   setRound: (num: number) => void;
   setGoal: (num: number) => void;
+  showInfoPanel: () => void;
+  closeInfoPanel: () => void;
 };
 
 export type soundStateType = {

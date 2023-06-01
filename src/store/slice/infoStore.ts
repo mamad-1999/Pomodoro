@@ -6,6 +6,7 @@ export const infoStore: StateCreator<infoStateType> = (set: any) => ({
   goalStart: 0,
   roundEnd: 4,
   roundStart: 0,
+  isInfoPanelShow: false,
   increaseGoal: () =>
     set((state: { goalStart: number }) => ({
       ...state,
@@ -25,5 +26,15 @@ export const infoStore: StateCreator<infoStateType> = (set: any) => ({
     set((state: any) => ({
       ...state,
       roundStart: num,
+    })),
+  showInfoPanel: () =>
+    set((state: any) => ({
+      ...state,
+      isInfoPanelShow: true,
+    })),
+  closeInfoPanel: () =>
+    set((state: any) => ({
+      ...state,
+      isInfoPanelShow: false,
     })),
 });

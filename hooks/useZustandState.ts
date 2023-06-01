@@ -26,6 +26,9 @@ const useZustandState = () => {
     isTikTokOn,
     showModal,
     tikTokControl,
+    closeInfoPanel,
+    isInfoPanelShow,
+    showInfoPanel,
   } = useTimeStore((state) => ({
     pomodoroType: state.pomodoroType,
     setFocus: state.setFocusSession,
@@ -51,6 +54,9 @@ const useZustandState = () => {
     isShowModal: state.isShowModal,
     showModal: state.showModal,
     closeModal: state.closeModal,
+    isInfoPanelShow: state.isInfoPanelShow,
+    showInfoPanel: state.showInfoPanel,
+    closeInfoPanel: state.closeInfoPanel,
   }));
 
   return {
@@ -78,6 +84,9 @@ const useZustandState = () => {
     isTikTokOn,
     showModal,
     tikTokControl,
+    isInfoPanelShow,
+    showInfoPanel,
+    closeInfoPanel,
   };
 };
 
