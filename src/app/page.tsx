@@ -11,7 +11,7 @@ export default function Home() {
   const { pomodoroType } = useZustandState()
 
   return (
-    <main className={`w-full min-h-screen ${pomodoroType === "focus" ? "bg-red-600" : "bg-indigo-400"}`}>
+    <main className={`w-full min-h-screen ${pomodoroType === "focus" ? "bg-red-600" : "bg-blue-500"}`}>
       <NavBar />
       <SoundModal />
       <InfoPanelControl />

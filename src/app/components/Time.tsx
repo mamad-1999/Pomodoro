@@ -63,8 +63,8 @@ const Time = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-4">
-            <h3 className="md:text-9xl text-8xl text-white font-thin select-none">{formatTime(focusTime).substring(-1, 5)}</h3>
-            <button onClick={handlePomodoroTime} className={`${pomodoroType === "focus" ? "bg-red-400" : "bg-indigo-300"} w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl`}>
+            <h3 className="md:text-9xl text-8xl text-white font-light select-none">{formatTime(focusTime).substring(-1, 5)}</h3>
+            <button onClick={handlePomodoroTime} className={`${pomodoroType === "focus" ? "bg-red-400  shadow-red-900" : "bg-blue-400  shadow-blue-900"} w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl`}>
                 {
                     status ? (
                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-20 h-20 stroke-white">
