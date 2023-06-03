@@ -5,10 +5,13 @@ import useZustandState from "../../../hooks/useZustandState";
 const InfoPanelControl = () => {
     const { isInfoPanelShow, closeInfoPanel, setGoal, setRound } = useZustandState()
 
-    const handleResets = (key: string) => {
+    const resetRound = () => {
         setRound(0)
-        key === "both" && setGoal(0)
-        closeInfoPanel()
+    }
+
+    const resetRoundAndGoal = () => {
+        resetRound()
+        setGoal(0)
     }
     return (
         <>
@@ -27,12 +30,12 @@ const InfoPanelControl = () => {
                                         Reset Your Count?
                                     </p>
                                 </div>
-                                <button onClick={() => handleResets("round")} className="px-8 py-2 active:shadow-xl">
+                                <button onClick={resetRound} className="px-8 py-2 active:shadow-xl">
                                     <p className=" text-black text-xl leading-relaxed">
                                         RESET ROUND
                                     </p>
                                 </button>
-                                <button onClick={() => handleResets("both")}
+                                <button onClick={resetRoundAndGoal}
                                     className="px-8 py-2">
                                     <p className=" text-black text-xl leading-relaxed">
                                         RESET ROUND & GOAL
