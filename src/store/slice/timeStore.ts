@@ -3,7 +3,8 @@ import { timeStateType } from "../state";
 
 export const timeStore: StateCreator<timeStateType> = (set: any) => ({
   playStatus: false,
-  focusTime: 7000,
+  focusTime: 4000,
+  isLongBreak: false,
   pomodoroType: "focus",
   playAction: () => set((state: any) => ({ ...state, playStatus: true })),
   pauseAction: () => set((state: any) => ({ ...state, playStatus: false })),

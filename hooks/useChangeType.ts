@@ -15,15 +15,22 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     increaseRound,
     increaseGoal,
     isAlarmOn,
+    goalStart,
   } = useZustandState();
 
-  const focusTime = 7000;
-  const breakTime = 7000;
+  const focusTime = 4000;
+  const breakTime = 4000;
+  const longBreak = 8000;
 
   const changeTypeAndPlay = () => {
     if (pomodoroType === "focus") {
+      if (goalStart > 0 && goalStart % 4 === 0) {
+        // set long Break after 4 times focus // first is 5 times
+        setTime(longBreak);
+      } else {
+        setTime(breakTime);
+      }
       setBreak();
-      setTime(breakTime);
       handleGoalAndRound();
     } else {
       setFocus();

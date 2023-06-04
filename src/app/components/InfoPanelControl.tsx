@@ -7,11 +7,13 @@ const InfoPanelControl = () => {
 
     const resetRound = () => {
         setRound(0)
+        closeInfoPanel()
     }
 
     const resetRoundAndGoal = () => {
         resetRound()
         setGoal(0)
+        closeInfoPanel()
     }
     return (
         <>
