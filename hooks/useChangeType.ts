@@ -18,9 +18,9 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     goalStart,
   } = useZustandState();
 
-  const focusTime = 4000;
-  const breakTime = 4000;
-  const longBreak = 8000;
+  const focusTime = 1_500_000;
+  const longBreak = 1_500_000;
+  const breakTime = 300_000;
 
   const changeTypeAndPlay = () => {
     if (pomodoroType === "focus") {
