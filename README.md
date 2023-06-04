@@ -28,3 +28,13 @@ Pomodoro is a productivity application built with Next.js 13, Zustand for state 
 - Usage
 - Set a timer duration for your work session using the Pomodoro Timer.
 - Start the timer and focus on your work until the timer completes.
+
+-----
+#### Focus time
+![1](https://github.com/mamad-1999/Pomodoro/assets/91375726/c1589571-62a0-4196-87ce-c045445ec911)
+-----
+#### Break time
+![2](https://github.com/mamad-1999/Pomodoro/assets/91375726/5624b005-ce22-4cb0-9f41-8c172d278645)
+-----
+#### Control sounds
+![3](https://github.com/mamad-1999/Pomodoro/assets/91375726/e3d458a7-d3f2-4143-9fcc-23d8c96b352b)
