@@ -21,7 +21,6 @@ Pomodoro is a productivity application built with Next.js 13, Zustand for state 
 - Zustand: A state management library for managing application state in React.
 - Tailwind CSS: A utility-first CSS framework for building responsive and stylish user interfaces.
 - TypeScript: A statically typed superset of JavaScript for enhanced developer productivity.
--
 
 #### Installation
 
