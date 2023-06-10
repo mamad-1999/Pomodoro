@@ -1,9 +1,7 @@
 "use client"
 
 import useZustandState from "../../../hooks/useZustandState"
-import InfoBox from "./InfoBox"
-import InfoButton from "./InfoButton"
-
+import { InfoBox, InfoButton } from "./index"
 
 const Footer = () => {
     const { goalEnd, goalStart, roundEnd, roundStart, showModal, showInfoPanel } = useZustandState()

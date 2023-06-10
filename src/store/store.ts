@@ -1,9 +1,6 @@
 import { create } from "zustand";
-import { devtools, persist } from "zustand/middleware";
-import { timeStore } from "./slice/timeStore";
-import { infoStore } from "./slice/infoStore";
-import { soundStore } from "./slice/soundStore";
-import { modalStore } from "./slice/modalStore";
+import { devtools } from "zustand/middleware";
+import { timeStore, infoStore, modalStore, soundStore } from "./slice";
 import { allStateType } from "./state";
 
 const useTimeStore = create<allStateType>()(

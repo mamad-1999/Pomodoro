@@ -1,11 +1,7 @@
 "use client"
 
-import Footer from "./components/Footer";
-import NavBar from "./components/NavBar";
-import Time from "./components/Time";
-import SoundModal from "./components/SoundModal"
+import { Footer, Time, InfoPanelControl, NavBar, SoundModal } from "./components";
 import useZustandState from "../../hooks/useZustandState";
-import InfoPanelControl from "./components/InfoPanelControl";
 
 export default function Home() {
   const { pomodoroType } = useZustandState()
