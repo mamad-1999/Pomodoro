@@ -1,5 +1,5 @@
-import useZustandState from "./useZustandState";
 import { Howl } from "howler";
+import useZustandState from "./useZustandState";
 
 const sound = new Howl({
   src: ["/alarm.mp3"],
@@ -22,6 +22,14 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
   const longBreak = 1_500_000;
   const breakTime = 300_000;
 
+  const handleGoalAndRound = () => {
+    if (isPlay === "NO") return;
+
+    increaseRound();
+    increaseGoal();
+    // changing Goal and Round after end focus time (not break time)
+  };
+
   const changeTypeAndPlay = () => {
     if (pomodoroType === "focus") {
       if (goalStart > 0 && goalStart % 4 === 0) {
@@ -39,19 +47,11 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     // check Focus or Break time for change session
 
     if (isPlay === "Yes") {
-      isAlarmOn && sound.play(); // alarm sound play after end break and focus time
+      if (isAlarmOn) sound.play(); // alarm sound play after end break and focus time
       play(); // play timer
     }
     // this code check the change session is skip button or end time
     // if end time play again timer else just change the session only
-  };
-
-  const handleGoalAndRound = () => {
-    if (isPlay === "NO") return;
-
-    increaseRound();
-    increaseGoal();
-    // changing Goal and Round after end focus time (not break time)
   };
 
   return { changeTypeAndPlay };
