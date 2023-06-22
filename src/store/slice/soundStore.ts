@@ -1,7 +1,7 @@
 import { StateCreator } from "zustand";
 import { soundStateType } from "../state";
 
-export const soundStore: StateCreator<soundStateType> = (set: any) => ({
+export const soundStore: StateCreator<soundStateType> = (set) => ({
   isAlarmOn: true,
   isTikTokOn: true,
   alarmControl: () =>

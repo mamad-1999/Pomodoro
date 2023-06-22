@@ -11,10 +11,10 @@ export type timeStateType = {
 };
 
 export type infoStateType = {
-  goalEnd: 12;
-  goalStart: 0;
-  roundEnd: 4;
-  roundStart: 0;
+  goalEnd: number;
+  goalStart: number;
+  roundEnd: number;
+  roundStart: number;
   isInfoPanelShow: boolean;
   increaseGoal: () => void;
   increaseRound: () => void;
