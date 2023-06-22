@@ -18,9 +18,9 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     goalStart,
   } = useZustandState();
 
-  const focusTime = 1_500_000;
-  const longBreak = 1_500_000;
-  const breakTime = 300_000;
+  const focusTime = 1_500_000; // 25 min
+  const longBreak = 1_500_000; // 25 min
+  const breakTime = 300_000; // 5 min
 
   const handleGoalAndRound = () => {
     if (isPlay === "NO") return;

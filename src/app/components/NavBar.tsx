@@ -15,8 +15,8 @@ function NavBar() {
 
     const isFocus = pomodoroType === "focus";
     const isBreak = pomodoroType === "break";
-    const focusTime = 7000;
-    const breakTime = 7000;
+    const focusTime = 1_500_000; // 25 min
+    const breakTime = 300_000; // 5 min
 
     if (status && isFocus) {
       setTime(focusTime);
