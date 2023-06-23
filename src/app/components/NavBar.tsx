@@ -3,6 +3,7 @@
 import { clearTime } from "../../../utils/clearTime";
 import useChangeType from "../../../hooks/useChangeType";
 import useZustandState from "../../../hooks/useZustandState";
+import { FOCUS_TIME, BREAK_TIME } from "../constant/constant";
 
 function NavBar() {
   const { changeTypeAndPlay } = useChangeType("NO");
@@ -15,15 +16,13 @@ function NavBar() {
 
     const isFocus = pomodoroType === "focus";
     const isBreak = pomodoroType === "break";
-    const focusTime = 1_500_000; // 25 min
-    const breakTime = 300_000; // 5 min
 
     if (status && isFocus) {
-      setTime(focusTime);
+      setTime(FOCUS_TIME);
       return;
     }
     if (status && isBreak) {
-      setTime(breakTime);
+      setTime(BREAK_TIME);
       return;
     }
     // if timer is play skip button just reset the current session and not changing

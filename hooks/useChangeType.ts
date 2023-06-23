@@ -1,4 +1,5 @@
 import { Howl } from "howler";
+import { FOCUS_TIME, BREAK_TIME, LONG_BREAK } from "@/app/constant/constant";
 import useZustandState from "./useZustandState";
 
 const sound = new Howl({
@@ -18,10 +19,6 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     goalStart,
   } = useZustandState();
 
-  const focusTime = 1_500_000; // 25 min
-  const longBreak = 1_500_000; // 25 min
-  const breakTime = 300_000; // 5 min
-
   const handleGoalAndRound = () => {
     if (isPlay === "NO") return;
 
@@ -34,15 +31,15 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
     if (pomodoroType === "focus") {
       if (goalStart > 0 && goalStart % 4 === 0) {
         // set long Break after 4 times focus // first is 5 times
-        setTime(longBreak);
+        setTime(LONG_BREAK);
       } else {
-        setTime(breakTime);
+        setTime(BREAK_TIME);
       }
       setBreak();
       handleGoalAndRound();
     } else {
       setFocus();
-      setTime(focusTime);
+      setTime(FOCUS_TIME);
     }
     // check Focus or Break time for change session
 
