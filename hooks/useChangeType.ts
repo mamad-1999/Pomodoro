@@ -20,6 +20,7 @@ const useChangeType = (isPlay: "Yes" | "NO") => {
   } = useZustandState();
 
   const handleGoalAndRound = () => {
+    // when isPlay is "NO" means just change the type no increase the Goal and Round
     if (isPlay === "NO") return;
 
     increaseRound();
