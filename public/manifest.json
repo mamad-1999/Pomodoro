@@ -7,7 +7,7 @@
   "start_url": "/",
   "name": "Pomodoro",
   "short_name": "Pomodoro",
-  "description": "Pomodoro is a productivity application",
+  "description": "The Pomodoro Technique is a time management method that alternates work periods with short breaks",
   "icons": [
     {
       "src": "/icon-192x192.png",
