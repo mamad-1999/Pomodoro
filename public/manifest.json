@@ -36,6 +36,27 @@
       "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Wonder Widgets"
-    }
+    },
+    {
+      "src": "/images/Screenshot-2.jpg",
+       "sizes": "1080x2400",
+       "type": "image/jpeg",
+       "form_factor": "narrow",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-3.jpg",
+       "sizes": "1080x2400",
+       "type": "image/jpeg",
+       "form_factor": "narrow",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-4.jpg",
+       "sizes": "1080x2400",
+       "type": "image/jpeg",
+       "form_factor": "narrow",
+       "label": "Wonder Widgets"
+     }
 ]
 }
