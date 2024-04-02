@@ -1,6 +1,7 @@
 {
   "theme_color": "#ffffff",
   "background_color": "#dc2626",
+  "display_override": ["window-controls-overlay"],
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
@@ -56,6 +57,34 @@
        "sizes": "1080x2400",
        "type": "image/jpeg",
        "form_factor": "narrow",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-desktop-1.png",
+       "sizes": "1366x768",
+       "type": "image/png",
+       "form_factor": "wide",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-desktop-2.png",
+       "sizes": "1366x768",
+       "type": "image/png",
+       "form_factor": "wide",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-desktop-3.png",
+       "sizes": "1366x768",
+       "type": "image/png",
+       "form_factor": "wide",
+       "label": "Wonder Widgets"
+     },
+     {
+      "src": "/images/Screenshot-desktop-4.png",
+       "sizes": "1366x768",
+       "type": "image/png",
+       "form_factor": "wide",
        "label": "Wonder Widgets"
      }
 ]
