@@ -10,7 +10,7 @@ const useTimeStore = create<allStateType>()(
     ...infoStore(...a),
     ...soundStore(...a),
     ...modalStore(...a),
-  }))
+  })),
 );
 
 export default useTimeStore;

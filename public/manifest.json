@@ -1,5 +1,5 @@
 {
-  "theme_color": "#dc2626",
+  "theme_color": "#ffffff",
   "background_color": "#dc2626",
   "display": "standalone",
   "scope": "/",
@@ -28,5 +28,14 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+     "src": "/images/Screenshot-1.jpg",
+      "sizes": "1080x2400",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Wonder Widgets"
+    }
+]
 }
