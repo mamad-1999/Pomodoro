@@ -10,7 +10,14 @@
 </div>
 
 ----
+
+> [!TIP]
 > Pomodoro is a productivity application built with Next.js 13, Zustand for state management, Tailwind CSS for UI styling, and TypeScript for type checking. It helps users manage their time effectively using the Pomodoro Technique.
+
+### History
+
+> [!TIP]
+> The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks. These intervals are named pomodoros, the plural in English of the Italian word pomodoro (tomato), after the tomato-shaped kitchen timer that Cirillo used as a university student.
 
 <p align="center">
   <img width="300px" hight="300px" src="https://github.com/mamad-1999/Pomodoro/assets/91375726/65448835-9921-41a4-ab96-899497b7694a" alt="js" />
