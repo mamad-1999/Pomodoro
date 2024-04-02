@@ -1,4 +1,4 @@
-## Pomodoro
+## Pomodoro ⏰
 [![GitHub Repo stars](https://img.shields.io/github/stars/mamad-1999/Pomodoro?style=social)](https://github.com/mamad-1999/Pomodoro)
 
 <div align="center">
