@@ -13,7 +13,7 @@
 > Pomodoro is a productivity application built with Next.js 13, Zustand for state management, Tailwind CSS for UI styling, and TypeScript for type checking. It helps users manage their time effectively using the Pomodoro Technique.
 
 <p align="center">
-  <img width="200px" hight="200px" src="https://github.com/mamad-1999/Pomodoro/assets/91375726/1b05537a-e480-4c8d-8cee-3b01d00db310" alt="js" />
+  <img width="300px" hight="300px" src="https://github.com/mamad-1999/Pomodoro/assets/91375726/65448835-9921-41a4-ab96-899497b7694a" alt="js" />
 </p>
 
 #### Features
