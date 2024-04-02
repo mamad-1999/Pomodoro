@@ -50,7 +50,7 @@
 - Start the timer and focus on your work until the timer completes.
 
 -----
-#### Focus time
+#### Screenshots
 ![1](https://github.com/mamad-1999/Pomodoro/assets/91375726/c1589571-62a0-4196-87ce-c045445ec911)
 -----
 
