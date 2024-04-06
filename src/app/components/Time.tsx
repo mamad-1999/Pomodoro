@@ -101,7 +101,7 @@ function Time() {
         {formatTime(focusTime).substring(-1, 5)}
       </h3>
       <div className={`w-36 h-36 flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full ${status && "play"}`} />
-      <div className={`w-[154px] h-[154px] flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full ${status && "chart"}`} />
+      <div className={`w-[154px] h-[154px] flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full ${status && "chart"}`}/>
           <button
           type="button"
           onClick={handlePomodoroTime}
