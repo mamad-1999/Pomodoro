@@ -104,9 +104,9 @@ function Time() {
         onClick={handlePomodoroTime}
         className={`${
           pomodoroType === "focus"
-            ? "bg-red-400  shadow-red-900"
-            : "bg-blue-400  shadow-blue-900"
-        } w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl`}
+            ? "bg-red-400  shadow-red-900 hover:bg-red-500"
+            : "bg-blue-400  shadow-blue-900 hover:bg-blue-500"
+        } w-36 h-36 rounded-full flex items-center justify-center mt-12 shadow-2xl border-4 transition-all ${status && "animate-bounce"}`}
       >
         {status ? (
           <svg

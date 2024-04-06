@@ -54,7 +54,7 @@ function NavBar() {
         onClick={handleChangeType}
         className="text-white text-xl"
       >
-        {status ? "Stop" : "Skip"}
+        {status ? "Reset" : "Skip"}
       </button>
     </nav>
   );
