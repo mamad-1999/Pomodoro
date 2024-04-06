@@ -19,24 +19,6 @@
     }
 }
 
-@property --percentage {
-    initial-value: 0%;
-    inherits: false;
-    syntax: "<percentage>";
-  }
-  
-  .chart {
-    background: conic-gradient(white var(--percentage),transparent 0);
-    border-radius: 50%;
-    animation: timer 15s infinite linear;
-  }
-  
-  @keyframes timer {
-    to {
-      --percentage: 100%;
-    }
-  }
-
 .border_none{
     border: none;
 }

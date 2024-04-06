@@ -101,7 +101,7 @@ function Time() {
         {formatTime(focusTime).substring(-1, 5)}
       </h3>
       <div className={`w-36 h-36 flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full ${status && "play"}`} />
-      <div className={`w-[154px] h-[154px] flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full ${status && "chart"}`}/>
+      <div className="w-[154px] h-[154px] flex z-10 justify-center items-center bg-white absolute mt-96 rounded-full"/>
           <button
           type="button"
           onClick={handlePomodoroTime}
@@ -109,7 +109,7 @@ function Time() {
             pomodoroType === "focus"
               ? "bg-gradient-to-r from-pink-500 to-red-500  shadow-red-900"
               : "bg-gradient-to-r from-cyan-500 to-blue-500"
-          } w-36 h-36 rounded-full z-20 absolute mt-96 flex items-center justify-center shadow-2xl ring-2 ring-inset ring-white transition-all ${status && "border_none"}`}
+          } w-36 h-36 rounded-full z-20 absolute mt-96 flex items-center justify-center shadow-2xl ring-2 ring-inset ring-white transition-all`}
         >
           {status ? (
             <svg
