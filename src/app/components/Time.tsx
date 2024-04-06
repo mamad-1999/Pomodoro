@@ -6,9 +6,11 @@ import { clearTime } from "../../../utils/clearTime";
 import { formatTime } from "../../../utils/formatTime";
 import useChangeType from "../../../hooks/useChangeType";
 import useZustandState from "../../../hooks/useZustandState";
+import useInstallPrompt from "../../../hooks/useInstallPrompt";
 
 function Time() {
   const { changeTypeAndPlay } = useChangeType("Yes");
+  const { promptInstall, actionPrompt } = useInstallPrompt()
   const {
     pause,
     play,
@@ -38,6 +40,10 @@ function Time() {
 
   const handlePlay = () => {
     play();
+    if(!actionPrompt){
+      promptInstall()
+    }
+    
     const time = setInterval(() => {
       decreaseFocusTime(1000);
       if (isTikTokOn) sound.play(); // play sound every second (tik tak)
