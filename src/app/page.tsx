@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main
       className={`w-full min-h-screen ${
-        pomodoroType === "focus" ? "bg-red-600" : "bg-blue-500"
+        pomodoroType === "focus" ? "bg-gradient-to-r from-pink-600 to-red-600" : "bg-gradient-to-r from-cyan-600 to-blue-600"
       }`}
     >
       <NavBar />

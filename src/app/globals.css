@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.play {
+    animation: playAnimation 1s infinite;
+    transition: all 2s ease-in;
+}
+
+@keyframes playAnimation {
+    from {
+        transform: scale(0);
+        opacity: 100;
+    }
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@property --percentage {
+    initial-value: 0%;
+    inherits: false;
+    syntax: "<percentage>";
+  }
+  
+  .chart {
+    background: conic-gradient(white var(--percentage),transparent 0);
+    border-radius: 50%;
+    animation: timer 20s infinite linear;
+  }
+  
+  @keyframes timer {
+    to {
+      --percentage: 100%;
+    }
+  }
+
+.border_none{
+    border: none;
+}
