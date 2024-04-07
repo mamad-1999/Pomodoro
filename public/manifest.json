@@ -1,12 +1,12 @@
 {
+  "name": "Pomodoro",
+  "short_name": "Pomodoro",
   "theme_color": "#ffffff",
-  "background_color": "#dc2626",
+  "background_color": "#ffffff",
   "display_override": ["window-controls-overlay"],
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Pomodoro",
-  "short_name": "Pomodoro",
   "description": "The Pomodoro Technique is a time management method that alternates work periods with short breaks",
   "icons": [
     {
