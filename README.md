@@ -57,3 +57,7 @@
 ![New Project](https://github.com/mamad-1999/Pomodoro/assets/91375726/7f071ad1-ba43-4f34-8435-5e1b643780dc)
 
 
+https://github.com/mamad-1999/Pomodoro/assets/91375726/2e27fef3-aec6-46d4-8533-bd42b4099456
+
+
+
